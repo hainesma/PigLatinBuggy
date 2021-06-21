@@ -23,8 +23,12 @@ namespace PigLatin
         public static bool IsVowel(char c)
         {
             char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
+            // 1st change:
+            // I want to change this method so it returns if c.ToString() is contained in vowels
+            return vowels.Contains(c);
+            // return c.ToString() == vowels.ToString();
             
-            return c.ToString() == vowels.ToString();
+            // Now that I fixed this method, the program returns "rkay" for "mark"
         }
 
         public static string ToPigLatin(string word)
@@ -62,7 +66,11 @@ namespace PigLatin
             string output = "placeholder";
             if (IsVowel(firstLetter) == true)
             {
-                output = word + "ay";
+                // 4th change:
+                // Change "ay" to "way" for the case where first letter is a vowel
+                // This fixes our program for words that begin with a vowel, namely 'apple' and 'aardvark'
+                // Now we just need to fix for sentences
+                output = word + "way";
             }
             else
             {
@@ -76,10 +84,19 @@ namespace PigLatin
                         break;
                     }
                 }
-
-                string sub = word.Substring(vowelIndex + 1);
-                string postFix = word.Substring(0, vowelIndex -1);
-
+                Console.WriteLine($"vowelIndex: {vowelIndex}");
+                // 2nd change:
+                // Change (vowelIndex + 1) to(vowelIndex) in order to include vowel in sub
+                string sub = word.Substring(vowelIndex);
+                // 3rd change:
+                // Change (0, vowelIndex - 1) to (0, vowelIndex) because second parameter
+                // of Substring is exclusive, not inclusive
+                // After these two changes, we get expected output for:
+                // heck, strong, tommy@email.com, Tommy, gym
+                // Still need to fix bug for words that start with vowels and sentences
+                string postFix = word.Substring(0, vowelIndex);
+                Console.WriteLine($"sub: {sub}");
+                Console.WriteLine($"postfix: {postFix}");
                 output = sub + postFix + "ay";
             }
 

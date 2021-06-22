@@ -5,13 +5,13 @@ namespace PigLatin
 {
     public class Program
     {
-        static void Main(string[] args)
-        {
-            string userInput = GetInput("Please input a word or sentence to translate to pig Latin");
+        //static void Main(string[] args)
+        //{
+        //    string userInput = GetInput("Please input a word or sentence to translate to pig Latin");
 
-            string translation = ToPigLatin(userInput);
-            Console.WriteLine(translation);
-        }
+        //    string translation = ToPigLatin(userInput);
+        //    Console.WriteLine(translation);
+        //}
 
         public static string GetInput(string prompt)
         {

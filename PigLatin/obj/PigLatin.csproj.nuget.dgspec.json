@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Stonefish\\Source\\Repos\\PigLatinBuggy\\PigLatin\\PigLatin.csproj": {}
+    "C:\\Users\\Stonefish\\Source\\Repos\\PigLatinBuggy-UnitTesting\\PigLatin\\PigLatin.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Stonefish\\Source\\Repos\\PigLatinBuggy\\PigLatin\\PigLatin.csproj": {
+    "C:\\Users\\Stonefish\\Source\\Repos\\PigLatinBuggy-UnitTesting\\PigLatin\\PigLatin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Stonefish\\Source\\Repos\\PigLatinBuggy\\PigLatin\\PigLatin.csproj",
+        "projectUniqueName": "C:\\Users\\Stonefish\\Source\\Repos\\PigLatinBuggy-UnitTesting\\PigLatin\\PigLatin.csproj",
         "projectName": "PigLatin",
-        "projectPath": "C:\\Users\\Stonefish\\Source\\Repos\\PigLatinBuggy\\PigLatin\\PigLatin.csproj",
+        "projectPath": "C:\\Users\\Stonefish\\Source\\Repos\\PigLatinBuggy-UnitTesting\\PigLatin\\PigLatin.csproj",
         "packagesPath": "C:\\Users\\Stonefish\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Stonefish\\Source\\Repos\\PigLatinBuggy\\PigLatin\\obj\\",
+        "outputPath": "C:\\Users\\Stonefish\\Source\\Repos\\PigLatinBuggy-UnitTesting\\PigLatin\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -27,7 +27,8 @@
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
@@ -44,6 +45,26 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.10.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.core": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
